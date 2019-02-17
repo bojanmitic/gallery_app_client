@@ -10,7 +10,7 @@ import Home from "./components/layout/Home";
 import Login from "./components/login/Login";
 import SignUp from "./components/login/SignUp";
 import ProfileForm from "./components/profile/ProfileForm";
-import Image from "./components/image/Image";
+import Image from "./components/image/ImageItem";
 
 import "./styles/main.scss";
 

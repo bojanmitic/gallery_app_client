@@ -47,7 +47,7 @@ export default function(state = initialState, action) {
       return {
         ...state,
         loading: false,
-        signUpErrors: action.payload,
+        signUpErrors: action.payload.errors,
         signUpMsg: ""
       };
     case LOG_OUT:
