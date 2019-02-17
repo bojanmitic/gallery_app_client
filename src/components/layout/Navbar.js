@@ -6,24 +6,24 @@ import { getAuth, getUser} from '../../store/reducers';
 
 class Navbar extends Component {
   render() {
-    const { isAuthenticated } = this.props;
+    const { user } = this.props;
 
     const authLinks = (
-      <ul className="nav-links">
-        <li className = 'nav-link__item'>
+      <ul id="nav-mobile" className="right hide-on-med-and-down">
+        <li>
           <Link to="/upload">Submit a photo</Link>
         </li>
-        <li className = 'nav-link__item'>
+        <li>
           <Link to="/profile">
             {/* <img src={user.avatar} alt={user.name} /> */}
             Profile
           </Link>
         </li>
-        <button className = 'nav-link__item' onClick={() => {}}>Logout</button>
+        <button onClick={() => {}}>Logout</button>
       </ul>
     );
     const guestLinks = (
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <ul id="nav-mobile" className="right hide-on-med-and-down">
           <li>
             <Link to="/signup">signup</Link>
           </li>
@@ -40,7 +40,7 @@ class Navbar extends Component {
           <Link className = "brand-logo"  to="/">
               Logo
           </Link>
-          {isAuthenticated ? authLinks : guestLinks}
+          {user ? authLinks : guestLinks}
         </div>
       </nav>
     );
@@ -48,7 +48,6 @@ class Navbar extends Component {
 }
 
 const mapStateToProps = state => ({
-    isAuthenticated: getAuth(state),
     user: getUser(state),
 });
 

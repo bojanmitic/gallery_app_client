@@ -19,7 +19,7 @@ export const authenticationSuccess = token => ({
 export const authentication = values => async dispatch => {
   dispatch(startFetching());
   try {
-    const result = await axios.post("/api/users/login", values);
+    const result = await axios.post("http://localhost:3090/api/users/register", values);
 
     dispatch(authenticationSuccess(result.data));
   } catch (err) {
@@ -34,7 +34,7 @@ export const signUpUser = values => async dispatch => {
   dispatch(startFetching());
 
   try {
-    await axios.post("/api/users/register", values);
+    await axios.post("http://localhost:3090/api/users/register", values);
 
     dispatch({
       type: SIGNUP_SUCCESS,
@@ -59,7 +59,7 @@ export const logOut = () => async dispatch => {
 export const checkUser = () => async dispatch => {
   dispatch(startFetching());
   try {
-    const result = await axios.get("/api/v2/users/current");
+    const result = await axios.get("http://localhost:3090/api/users/current");
 
     dispatch(authenticationSuccess(result.data));
   } catch (err) {
