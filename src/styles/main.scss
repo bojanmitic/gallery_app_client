@@ -1,0 +1,30 @@
+@import './Navbar';
+
+// App styles
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+strong {
+  font-weight: 700;
+}
+
+.App {
+  height: 100vh;
+}
+
+

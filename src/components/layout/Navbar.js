@@ -6,40 +6,41 @@ import { getAuth, getUser} from '../../store/reducers';
 
 class Navbar extends Component {
   render() {
-      const { isAuthenticated } = this.props;
+    const { isAuthenticated } = this.props;
+
     const authLinks = (
-      <ul className='navbar-nav'>
-        <li>
+      <ul className="nav-links">
+        <li className = 'nav-link__item'>
           <Link to="/upload">Submit a photo</Link>
         </li>
-        <li>
+        <li className = 'nav-link__item'>
           <Link to="/profile">
             {/* <img src={user.avatar} alt={user.name} /> */}
             Profile
           </Link>
         </li>
-        <button onClick={() => {}}>Logout</button>
+        <button className = 'nav-link__item' onClick={() => {}}>Logout</button>
       </ul>
     );
     const guestLinks = (
-        <ul className='navbar-nav'>
-        <li>
-          <Link to="/signup">signup</Link>
-        </li>
-        <li>
-          <Link to="/login">
-            login
-          </Link>
-        </li>
+      <ul className="nav-links">
+          <li className = 'nav-link__item'>
+            <Link to="/signup">signup</Link>
+          </li>
+          <li className = 'nav-link__item'>
+            <Link to="/login">
+              login
+            </Link>
+          </li>
       </ul>
     )
     return (
-        <nav>
-        <div className="container">
-        <Link  to="/">
-            Logo
-        </Link>
-            {isAuthenticated ? authLinks : guestLinks}
+      <nav>
+        <div className="nav-wrapper">
+          <Link className = "brand-logo"  to="/">
+              Logo
+          </Link>
+          {true ? authLinks : guestLinks}
         </div>
       </nav>
     );
