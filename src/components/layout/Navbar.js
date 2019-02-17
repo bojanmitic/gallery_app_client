@@ -23,11 +23,11 @@ class Navbar extends Component {
       </ul>
     );
     const guestLinks = (
-      <ul className="nav-links">
-          <li className = 'nav-link__item'>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li>
             <Link to="/signup">signup</Link>
           </li>
-          <li className = 'nav-link__item'>
+          <li>
             <Link to="/login">
               login
             </Link>
@@ -40,7 +40,7 @@ class Navbar extends Component {
           <Link className = "brand-logo"  to="/">
               Logo
           </Link>
-          {true ? authLinks : guestLinks}
+          {isAuthenticated ? authLinks : guestLinks}
         </div>
       </nav>
     );
