@@ -1,15 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
+import ImageItem from './ImageItem';
 
-
-class Images extends Component {
-
-  render() {
-    return (
-      <div>
-        
-      </div>
-    )
-  }
+const Images = (props) => {
+    const { images } = props;
+    console.log(images);
+     return images.map(image => <ImageItem key={image._id} image={image} />)
 }
 
 export default Images;

@@ -6,3 +6,10 @@ export const SIGNUP_SUCCESS = 'SIGNUP_SUCCESS';
 export const SIGNUP_FAILS = 'SiGNUP_FAILS';
 
 export const LOG_OUT = 'LOG_OUT';
+
+export const FETCH_IMAGES_SUCCESS = 'FETCH_IMAGES_SUCCESS';
+export const FETCH_IMAGES_FAIL = 'FETCH_IMAGES_FAIL';
+
+
+
+
