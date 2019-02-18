@@ -5,7 +5,6 @@ import Images from '../image/ImagesContainer';
 const Home = () => {
   return (
     <div>
-      Home
       <Images />
       <Footer />
     </div>

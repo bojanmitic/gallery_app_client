@@ -20,11 +20,7 @@ class ImagesContainer extends Component {
 
     return (
       <div className="images-container">
-        <div className="row">
-          <div className="col-md-12">
             {imagesContent}
-          </div>
-        </div>
       </div>
     );
   
