@@ -68,6 +68,6 @@ export default compose(
   ),
   reduxForm({
 	  validate,
-	   form: "signup", 
+	   form: "imageUpload", 
 	   destroyOnUnmount: false })
 )(ImageUploadForm);
