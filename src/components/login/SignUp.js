@@ -8,7 +8,7 @@ import { getSignUpMsg } from "../../store/reducers/index";
 import validate from '../../utils/validate';
 
 const SignUp = props => {
-  const { handleSubmit, signUpMsg, signUpErrors } = props;
+  const { handleSubmit, signUpMsg } = props;
 
   const SignUp = values => {
     props.signUpUser(values);
@@ -42,7 +42,7 @@ const SignUp = props => {
           label="Password"
         />
 
-        <button>Sign in</button>
+        <button className="waves-effect waves-light btn">Sign in</button>
       </form>
     </>
   );

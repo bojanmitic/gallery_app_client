@@ -2,6 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3090",
   "dependencies": {
     "axios": "^0.18.0",
     "materialize-css": "^1.0.0-rc.2",

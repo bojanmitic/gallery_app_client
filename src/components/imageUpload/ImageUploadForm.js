@@ -2,16 +2,16 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { compose } from "redux";
 import { Field, reduxForm } from "redux-form";
+import fileInput from '../renderField/FileInput';
 import renderField from "../renderField";
 import * as actions from "../../store/actions";
 import validate from '../../utils/validate';
 import { withRouter } from 'react-router-dom';
-import fileInput from '../renderField/FileInput';
 
-class ProfileForm extends Component {
+class ImageUploadForm extends Component {
   
-   onSubmit = values => {
-    this.props.login(values, () => {
+   onImageUpload = values => {
+    this.props.uploadImage(values, () => {
       this.props.history.push('/');
     })
   };
@@ -20,54 +20,45 @@ class ProfileForm extends Component {
   
     return (
       <>
-        <form onSubmit={handleSubmit(this.onSubmit)}>
+        <form onSubmit={handleSubmit(this.onImageUpload)}>
           <Field
-            name="personalSitePortfolio"
+            name="cameraMake"
             component={renderField}
             type="text"
-            label="Personal site"
+            label="Camera Make"
           />
           <Field
-            name="location"
+            name="cameraModel"
             component={renderField}
             type="text"
-            label="Location"
+            label="Camera Model"
           />
           <Field
-            name="location"
+            name="focalLength"
             component={renderField}
             type="text"
-            label="Location"
+            label="Focal Length"
           />
           <Field
-            name="bio"
+            name="iso"
             component={renderField}
             type="text"
-            label="Bio"
+            label="ISO"
           />
           <Field
-            name="interests"
-            component={renderField}
-            type="text"
-            label="Interests"
-          />
-          <Field
-            name="avatar"
+            name="image"
             component={fileInput}
             type="file"
-            label="Profile photo"
+            label="Image for upload"
           />
   
-          <button className="waves-effect waves-light btn">Login</button>
+  
+          <button className="waves-effect waves-light btn">Upload Image</button>
         </form>
       </>
     );
   }
 };
-
-// const mapStateToProps = state => ({
-  
-// });
 
 export default compose(
   withRouter,
@@ -77,6 +68,6 @@ export default compose(
   ),
   reduxForm({
 	  validate,
-	   form: "profileForm", 
+	   form: "signup", 
 	   destroyOnUnmount: false })
-)(ProfileForm);
+)(ImageUploadForm);

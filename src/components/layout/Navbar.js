@@ -2,9 +2,15 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actions from "../../store/actions";
-import { getAuth, getUser} from '../../store/reducers';
+import { getUser} from '../../store/reducers';
+import { withRouter } from 'react-router-dom'
 
 class Navbar extends Component {
+  handleLogout(e){
+    e.preventDefault()
+    this.props.logOut();
+    this.props.history.push('/')
+  }
   render() {
     const { user } = this.props;
 
@@ -19,7 +25,7 @@ class Navbar extends Component {
             Profile
           </Link>
         </li>
-        <button onClick={() => {}}>Logout</button>
+        <button onClick={this.handleLogout.bind(this)}>Logout</button>
       </ul>
     );
     const guestLinks = (
@@ -51,4 +57,4 @@ const mapStateToProps = state => ({
     user: getUser(state),
 });
 
-export default connect(mapStateToProps, actions)( Navbar);
+export default withRouter(connect(mapStateToProps, actions)( Navbar));

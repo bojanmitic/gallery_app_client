@@ -1,9 +1,9 @@
 export {
   checkUser,
-  authentication,
+  login,
   signUpUser,
   logOut,
   authenticationSuccess
 } from "./authUser";
 
-export { fetchImages } from "./imagesActions";
+export { fetchImages, uploadImage } from "./imagesActions";
