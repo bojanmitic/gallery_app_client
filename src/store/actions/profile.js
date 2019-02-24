@@ -1,49 +1,49 @@
 import axios from "axios";
 
 import {
-  FETCH_IMAGES_SUCCESS,
   START_FETCHING,
-  FETCH_IMAGES_FAIL,
-  UPLOAD_IMAGE_SUCCESS,
-  UPLOAD_IMAGE_FAIL
+  FETCH_PROFILE_SUCCESS,
+  FETCH_PROFILE_FAIL,
+  CREATE_PROFILE_SUCCESS,
+  CREATE_PROFILE_FAIL
 } from "./types";
 
 export const startFetching = () => ({
   type: START_FETCHING
 });
 
-export const fetchImages = () => async dispatch => {
+export const fetchProfile = () => async dispatch => {
   dispatch(startFetching());
 
   try {
-    await axios.get("/api/images").then(res =>
+    await axios.get("api/profiles/current").then(res =>
       dispatch({
-        type: FETCH_IMAGES_SUCCESS,
+        type: FETCH_PROFILE_SUCCESS,
         payload: res.data
       })
     );
   } catch (err) {
     dispatch({
-      type: FETCH_IMAGES_FAIL,
+      type: FETCH_PROFILE_FAIL,
       payload: err.response.data
     });
   }
 };
 
-export const uploadImage = (values, callBack) => async dispatch => {
+export const createProfile = (values, callBack) => async dispatch => {
   dispatch(startFetching());
 
   try {
     await axios
-      .post("/api/images", values)
+      .post("api/profiles/current", values)
       .then(res => dispatch({
-        type: UPLOAD_IMAGE_SUCCESS,
+        type: CREATE_PROFILE_SUCCESS,
         payload: res.data
       }));
       callBack();
   } catch(err) {
     dispatch({
-      type: UPLOAD_IMAGE_FAIL,
+      type: CREATE_PROFILE_FAIL,
       payload: err.response.data
     })
   }

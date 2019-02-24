@@ -6,12 +6,12 @@ import renderField from "../renderField";
 import * as actions from "../../store/actions";
 import validate from '../../utils/validate';
 import { withRouter } from 'react-router-dom';
-import fileInput from '../renderField/FileInput';
+import fileInput from '../renderField/FieldFileInput';
 
 class ProfileForm extends Component {
   
    onSubmit = values => {
-    this.props.login(values, () => {
+    this.props.createProfile(values, () => {
       this.props.history.push('/');
     })
   };
@@ -64,10 +64,6 @@ class ProfileForm extends Component {
     );
   }
 };
-
-// const mapStateToProps = state => ({
-  
-// });
 
 export default compose(
   withRouter,

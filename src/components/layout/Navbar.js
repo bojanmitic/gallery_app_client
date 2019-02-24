@@ -20,9 +20,9 @@ class Navbar extends Component {
           <Link to="/upload">Submit a photo</Link>
         </li>
         <li>
-          <Link to="/profile">
+          <Link to="/create-edit-profile">
             {/* <img src={user.avatar} alt={user.name} /> */}
-            Profile
+            Create or Edit Profile
           </Link>
         </li>
         <button onClick={this.handleLogout.bind(this)}>Logout</button>

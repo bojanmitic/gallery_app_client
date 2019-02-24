@@ -1,15 +1,14 @@
 import {
     START_FETCHING,
-    FETCH_IMAGES_SUCCESS,
-    FETCH_IMAGES_FAIL,
-    UPLOAD_IMAGE_SUCCESS,
-    UPLOAD_IMAGE_FAIL
+    FETCH_PROFILE_SUCCESS,
+    FETCH_PROFILE_FAIL,
+    CREATE_PROFILE_SUCCESS,
+    CREATE_PROFILE_FAIL
   } from "../actions/types";
   
   const initialState = {
     loading: false,
-    images: [],
-    image:{},
+    profile:{},
     errorMessage: ''
   };
   
@@ -20,30 +19,20 @@ import {
           ...state,
           loading: true,
         };
-      case FETCH_IMAGES_SUCCESS:
+      case CREATE_PROFILE_SUCCESS:
+      case FETCH_PROFILE_SUCCESS:
         return {
           ...state,
           loading: false,
-          images: action.payload,
+          profile: action.payload,
           errorMessage: ''
         }
-      case FETCH_IMAGES_FAIL:
+      case CREATE_PROFILE_FAIL:
+      case FETCH_PROFILE_FAIL:
         return {
           ...state,
           loading: false,
-          images: null,
-          errorMessage: action.payload
-        }
-      case UPLOAD_IMAGE_SUCCESS:
-        return {
-          ...state,
-          loading: false,
-          images: [...state.images, action.payload]
-        }
-      case UPLOAD_IMAGE_FAIL:
-        return {
-          ...state,
-          loading: false,
+          profile: null,
           errorMessage: action.payload
         }
       default:
