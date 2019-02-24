@@ -13,7 +13,6 @@ import ProfileForm from "./components/profile/ProfileForm";
 import Profile from "./components/profile/Profile";
 import Image from "./components/image/ImageItem";
 import ImageUploadForm from "./components/imageUpload/ImageUploadForm";
-import ImageUpload from "./components/imageUpload/ImageUpload";
 
 import "./styles/main.scss";
 
