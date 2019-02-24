@@ -3,17 +3,17 @@ import { connect } from "react-redux";
 import * as actions from "./store/actions";
 import { withRouter, Route, Switch } from "react-router-dom";
 import PrivateRoute from "./components/common/PrivateRoute";
-import PublicComponent from './containers/PublicComponent';
+import PublicComponent from "./containers/PublicComponent";
 
 import NavBar from "../src/components/layout/Navbar";
 import Home from "./components/layout/Home";
 import Login from "./components/login/Login";
 import SignUp from "./components/login/SignUp";
 import ProfileForm from "./components/profile/ProfileForm";
-import Profile from './components/profile/Profile';
+import Profile from "./components/profile/Profile";
 import Image from "./components/image/ImageItem";
-import ImageUploadForm from './components/imageUpload/ImageUploadForm';
-import ImageUpload from './components/imageUpload/ImageUpload';
+import ImageUploadForm from "./components/imageUpload/ImageUploadForm";
+import ImageUpload from "./components/imageUpload/ImageUpload";
 
 import "./styles/main.scss";
 
@@ -45,17 +45,17 @@ class App extends Component {
             render={() => <PublicComponent component={Image} />}
           />
 
-           <Route
+          <Route
             exact
             path="/upload"
-            render={() => <PrivateRoute component={ImageUpload} />}
+            render={() => <PrivateRoute component={ImageUploadForm} />}
           />
           <Route
             exact
             path="/create-edit-profile"
             render={() => <PrivateRoute component={ProfileForm} />}
           />
-           <Route
+          <Route
             exact
             path="/profile"
             render={() => <PrivateRoute component={Profile} />}
