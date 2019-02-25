@@ -20,7 +20,7 @@ class Profile extends Component {
             {`${name.firstName} ${name.lastName}`}
           </h3>
           <div>
-            <a  target='_blank' rel="noopener noreferrer" href={profile.personalSitePortfolio} >Personal Website</a>     
+            <a  target='_blank' rel="noopener noreferrer" href={profile.personalSitePortfolio} >{profile.personalSitePortfolio}</a>     
           </div>
         </div>
       </div>
