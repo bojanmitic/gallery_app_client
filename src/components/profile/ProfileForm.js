@@ -15,6 +15,9 @@ class ProfileForm extends Component {
       formValues: new FormData()
     };
   }
+  componentDidMount() {
+    this.props.fetchProfile();
+  }
 
   onFileChange = e => {
     const { formValues } = this.state;

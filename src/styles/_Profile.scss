@@ -1,11 +1,12 @@
 .profile{
-    width: 40%;
+    width: 50%;
     margin: 0 auto;
 }
 
 .profile__data {
     display: flex;
-    padding: 2rem;
+    justify-content: space-between;
+    margin-top: 2rem;
 }
 
 .profile__data--image {
@@ -15,6 +16,6 @@
 }
 
 .profile__data--name {
-
+    font-weight: 700;
 }
 
