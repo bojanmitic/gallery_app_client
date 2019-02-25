@@ -14,8 +14,12 @@
     height: 250px;
     border-radius: 50%;
 }
+.profile__data__info {
+    margin-left: 3rem;
+    line-height: 25px;
+}
 
-.profile__data--name {
-    font-weight: 700;
+.profile__data__info--name {
+    font-weight: 600;
 }
 

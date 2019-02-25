@@ -15,8 +15,8 @@ class Profile extends Component {
       <div className="profile">
         <div className="profile__data">
           <img className="profile__data--image" src={profile.avatarCloudinaryUrl}  alt="profile "/>
-          <div>
-            <h3 className="profile__data--name">
+          <div className="profile__data__info">
+            <h3 className="profile__data__info--name">
               {`${name.firstName} ${name.lastName}`}
             </h3>
             <div>
@@ -25,6 +25,8 @@ class Profile extends Component {
             <p>
               {profile.bio}
             </p>
+            <p>My Interests are: {profile.interests}</p>
+            <p>At the moment I'm in {profile.location}</p>
             <Link to='/create-edit-profile'>Edit Profile</Link>
           </div>
         </div>
