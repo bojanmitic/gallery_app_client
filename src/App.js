@@ -59,6 +59,11 @@ class App extends Component {
             path="/profile"
             render={() => <PrivateRoute component={Profile} />}
           />
+          <Route
+            exact
+            path="/profile"
+            render={() => <PrivateRoute component={Profile} />}
+          />
         </Switch>
       </div>
     );

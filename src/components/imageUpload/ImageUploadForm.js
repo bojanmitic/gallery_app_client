@@ -29,7 +29,6 @@ class ImageUploadForm extends Component {
     formData.append("cameraMake", values.cameraMake);
     formData.append("cameraModel", values.cameraModel);
     formData.append("focalLength", values.focalLength);
-    formData.append("focalLength", values.focalLength);
     formData.append("iso", values.iso);
 
     this.props.uploadImage(formData, () => {
@@ -60,7 +59,7 @@ class ImageUploadForm extends Component {
             label="Focal Length"
           />
           <Field name="iso" component={renderField} type="text" label="ISO" />
-          <input name="image" type="file" onChange={this.fileChange} />
+          <input name="image" type="file" onChange={this.onFileChange} />
           <button className="waves-effect waves-light btn">Upload Image</button>
         </form>
       </>

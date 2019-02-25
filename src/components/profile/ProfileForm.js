@@ -6,6 +6,7 @@ import renderField from "../renderField";
 import * as actions from "../../store/actions";
 import validate from "../../utils/validate";
 import { withRouter } from "react-router-dom";
+import { getProfile } from "../../store/reducers";
 
 class ProfileForm extends Component {
   constructor(props) {
@@ -30,8 +31,7 @@ class ProfileForm extends Component {
     formData.append("location", values.location);
     formData.append("bio", values.bio);
     formData.append("interests", values.interests);
-    formData.append("avatar", values.avatar);
-
+    
     this.props.createProfile(formData, () => {
       this.props.history.push("/");
     });
@@ -60,23 +60,28 @@ class ProfileForm extends Component {
             label="Bio"
           />
           <Field name="interests" component={renderField} type="text" label="Interests" />
-          <input name="avatar" type="file" onChange={this.fileChange} />
-          <button className="waves-effect waves-light btn">Create Profile</button>
+          <input name="avatar" type="file" onChange={this.onFileChange} />
+          <button className="waves-effect waves-light btn">Save Profile</button>
         </form>
       </>
     );
   }
 }
 
+const mapStateToProps = state => ({
+  initialValues: getProfile(state)
+})
+
 export default compose(
   withRouter,
   connect(
-    null,
+    mapStateToProps,
     actions
   ),
   reduxForm({
     validate,
     form: "profileForm",
+    enableReinitialize : true,
     destroyOnUnmount: false
   })
 )(ProfileForm);
