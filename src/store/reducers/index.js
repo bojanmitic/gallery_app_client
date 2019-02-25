@@ -21,4 +21,4 @@ export const getSignUpMsg = state => state.auth.signUpMsg;
 
 export const getImages = state => state.images;
 
-export const getProfile = state => state.profile
+export const getProfile = state => state.profile.profile;
