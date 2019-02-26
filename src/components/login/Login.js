@@ -40,10 +40,6 @@ class Login extends Component {
   }
 };
 
-// const mapStateToProps = state => ({
-  
-// });
-
 export default compose(
   withRouter,
   connect(
