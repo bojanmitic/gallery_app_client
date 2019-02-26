@@ -6,7 +6,12 @@ const Images = (props) => {
     const { images } = props;
     return(
         <Masonry
-            breakpointCols={3}  
+            breakpointCols={{
+                default: 3,
+                1200: 3,
+                700: 2,
+                500: 1,
+            }}  
             className="my-masonry-grid"
             columnClassName="my-masonry-grid_column"
         >
