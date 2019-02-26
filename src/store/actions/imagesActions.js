@@ -48,3 +48,22 @@ export const uploadImage = (values, callBack) => async dispatch => {
     })
   }
 };
+
+
+export const fetchImagesFromSameAuthor = (id) => async dispatch => {
+  dispatch(startFetching());
+  console.log(id)
+  try {
+    await axios.get(`/api/images/author/${id}`).then(res =>
+      dispatch({
+        type: FETCH_IMAGES_SUCCESS,
+        payload: res.data
+      })
+    );
+  } catch (err) {
+    dispatch({
+      type: FETCH_IMAGES_FAIL,
+      payload: err.response.data
+    });
+  }
+};
