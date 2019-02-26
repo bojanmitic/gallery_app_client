@@ -3,7 +3,8 @@ import {
     FETCH_PROFILE_SUCCESS,
     FETCH_PROFILE_FAIL,
     CREATE_PROFILE_SUCCESS,
-    CREATE_PROFILE_FAIL
+    CREATE_PROFILE_FAIL,
+    CLEAR_CURRENT_PROFILE
   } from "../actions/types";
   
   const initialState = {
@@ -34,6 +35,13 @@ import {
           loading: false,
           profile: null,
           errorMessage: action.payload
+        }
+      case CLEAR_CURRENT_PROFILE:
+        return {
+          ...state,
+          loading: false,
+          profile: null,
+          errorMessage: ''
         }
       default:
         return state;

@@ -8,4 +8,4 @@ export {
 
 export { fetchImages, uploadImage, fetchImagesFromSameAuthor } from "./imagesActions";
 
-export { fetchProfile, createProfile } from './profile';
+export { fetchProfile, createProfile, clearCurrentProfile } from './profile';
