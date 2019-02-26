@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { getUser } from '../store/reducers';
-import { checkUser } from '../store/actions';
+import { getUser } from '../../store/reducers';
+import { checkUser } from '../../store/actions';
 
 class PublicComponent extends Component {
   componentDidMount() {

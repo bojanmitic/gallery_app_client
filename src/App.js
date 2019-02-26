@@ -3,7 +3,9 @@ import { connect } from "react-redux";
 import * as actions from "./store/actions";
 import { withRouter, Route, Switch } from "react-router-dom";
 import PrivateRoute from "./components/common/PrivateRoute";
-import PublicComponent from "./containers/PublicComponent";
+import PublicComponent from "./components/common/PublicComponent";
+import PrivateOrPublic from './components/common/PrivateOrPublic';
+
 
 import NavBar from "../src/components/layout/Navbar";
 import Home from "./components/layout/Home";
@@ -25,7 +27,7 @@ class App extends Component {
           <Route
             exact
             path="/"
-            render={() => <PrivateRoute component={Home} />}
+            render={() => <PrivateOrPublic restricted={false} component={Home} />}
           />
           <Route
             exact
@@ -53,11 +55,6 @@ class App extends Component {
             exact
             path="/create-edit-profile"
             render={() => <PrivateRoute component={ProfileForm} />}
-          />
-          <Route
-            exact
-            path="/profile"
-            render={() => <PrivateRoute component={Profile} />}
           />
           <Route
             exact

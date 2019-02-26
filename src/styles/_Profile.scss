@@ -1,20 +1,26 @@
 .profile{
-    width: 40%;
+    width: 50%;
     margin: 0 auto;
 }
 
 .profile__data {
     display: flex;
-    padding: 2rem;
+    justify-content: space-between;
+    margin-top: 2rem;
 }
 
 .profile__data--image {
-    width: 250px;
+    object-fit: cover;
+    min-width: 250px;
     height: 250px;
     border-radius: 50%;
 }
+.profile__data__info {
+    margin-left: 3rem;
+    line-height: 25px;
+}
 
-.profile__data--name {
-
+.profile__data__info--name {
+    font-weight: 600;
 }
 
