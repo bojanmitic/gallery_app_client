@@ -6,6 +6,6 @@ export {
   authenticationSuccess
 } from "./authUser";
 
-export { fetchImages, uploadImage } from "./imagesActions";
+export { fetchImages, uploadImage, fetchImagesFromSameAuthor } from "./imagesActions";
 
-export { fetchProfile, createProfile } from './profile';
+export { fetchProfile, createProfile, clearCurrentProfile } from './profile';

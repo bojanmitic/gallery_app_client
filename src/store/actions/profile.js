@@ -5,7 +5,8 @@ import {
   FETCH_PROFILE_SUCCESS,
   FETCH_PROFILE_FAIL,
   CREATE_PROFILE_SUCCESS,
-  CREATE_PROFILE_FAIL
+  CREATE_PROFILE_FAIL,
+  CLEAR_CURRENT_PROFILE
 } from "./types";
 
 export const startFetching = () => ({
@@ -47,4 +48,10 @@ export const createProfile = (values, callBack) => async dispatch => {
       payload: err.response.data
     })
   }
+};
+
+export const clearCurrentProfile = () => {
+  return {
+    type: CLEAR_CURRENT_PROFILE
+  };
 };

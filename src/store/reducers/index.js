@@ -2,12 +2,14 @@ import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 import authReducer from './authReducer';
 import imagesReducer from './imagesReducer';
+import imagesFormSameAuthor from './imagesFormSameAuthor';
 import profileReducer from './profileReducer';
 
 export default combineReducers({
     auth: authReducer,
     form: formReducer,
     images: imagesReducer,
+    imagesFormSameAuthor,
     profile: profileReducer
 });
 
@@ -20,5 +22,8 @@ export const getSignUpErrors = state => state.auth.signUpErrors;
 export const getSignUpMsg = state => state.auth.signUpMsg;
 
 export const getImages = state => state.images;
+export const getImagesFromSameAuthor = state => state.imagesFormSameAuthor;
 
 export const getProfile = state => state.profile.profile;
+
+export const getImageUploadProgress = state => state.images.imageUploadProgress
