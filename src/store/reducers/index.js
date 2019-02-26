@@ -25,3 +25,5 @@ export const getImages = state => state.images;
 export const getImagesFromSameAuthor = state => state.imagesFormSameAuthor;
 
 export const getProfile = state => state.profile.profile;
+
+export const getImageUploadProgress = state => state.images.imageUploadProgress

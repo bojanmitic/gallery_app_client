@@ -4,8 +4,10 @@ import { compose } from "redux";
 import { Field, reduxForm } from "redux-form";
 import renderField from "../renderField";
 import * as actions from "../../store/actions";
+import { getImageUploadProgress } from '../../store/reducers';
 import validate from "../../utils/validate";
 import { withRouter } from "react-router-dom";
+import ProgressBar from '../common/progressBar/ProgressBar';
 
 class ImageUploadForm extends Component {
   constructor(props) {
@@ -36,7 +38,7 @@ class ImageUploadForm extends Component {
     });
   };
   render() {
-    const { handleSubmit } = this.props;
+    const { handleSubmit, imageUploadProgress } = this.props;
     return (
       <>
         <form onSubmit={handleSubmit(this.onImageUpload)}>
@@ -62,15 +64,20 @@ class ImageUploadForm extends Component {
           <input name="image" type="file" onChange={this.onFileChange} />
           <button className="waves-effect waves-light btn">Upload Image</button>
         </form>
+        <ProgressBar percentage={imageUploadProgress}/>
       </>
     );
   }
 }
 
+const mapStateToProps = state => ({
+  imageUploadProgress: getImageUploadProgress(state)
+})
+
 export default compose(
   withRouter,
   connect(
-    null,
+    mapStateToProps,
     actions
   ),
   reduxForm({

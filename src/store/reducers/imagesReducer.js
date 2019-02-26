@@ -3,13 +3,15 @@ import {
     FETCH_IMAGES_SUCCESS,
     FETCH_IMAGES_FAIL,
     UPLOAD_IMAGE_SUCCESS,
-    UPLOAD_IMAGE_FAIL
+    UPLOAD_IMAGE_FAIL,
+    IMAGE_UPLOAD_PROGRESS
   } from "../actions/types";
   
   const initialState = {
     loading: false,
     images: [],
     image:{},
+    imageUploadProgress: 0,
     errorMessage: ''
   };
   
@@ -25,6 +27,7 @@ import {
           ...state,
           loading: false,
           images: action.payload,
+          imageUploadProgress: 0,
           errorMessage: ''
         }
       case FETCH_IMAGES_FAIL:
@@ -38,6 +41,7 @@ import {
         return {
           ...state,
           loading: false,
+          imageUploadProgress: 0,
           images: [...state.images, action.payload]
         }
       case UPLOAD_IMAGE_FAIL:
@@ -46,6 +50,12 @@ import {
           loading: false,
           errorMessage: action.payload
         }
+      case IMAGE_UPLOAD_PROGRESS:
+        return {
+          ...state,
+          loading: false,
+          imageUploadProgress: action.payload
+        }  
       default:
         return state;
     }
