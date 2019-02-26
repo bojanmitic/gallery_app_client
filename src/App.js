@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import * as actions from "./store/actions";
 import { withRouter, Route, Switch } from "react-router-dom";
 import PrivateRoute from "./components/common/PrivateRoute";
-import PublicComponent from "./containers/PublicComponent";
+import PublicComponent from "./components/common/PublicComponent";
 import PrivateOrPublic from './components/common/PrivateOrPublic';
 
 
